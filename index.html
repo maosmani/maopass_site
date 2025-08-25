@@ -120,17 +120,20 @@
             }
         </style>
 
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-CMGCVTXP16"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || []
+            function gtag() {
+                dataLayer.push(arguments)
+            }
+            gtag('js', new Date())
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMGCVTXP16"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CMGCVTXP16');
-</script>
-
+            gtag('config', 'G-CMGCVTXP16')
+        </script>
     </head>
     <body class="font-sans bg-gray-50 text-gray-900 antialiased">
         <!-- Navbar -->
@@ -237,7 +240,9 @@
                                 class="text-lg text-gray-600 mb-8 lg:max-w-lg mx-auto lg:mx-0"
                             >
                                 Discover MaoPass: Easily Check your Passwords
-                                Strength, And  see if they are common passwords or not, So that you can make them strong and secure.
+                                Strength, And see if they are common passwords
+                                or not, So that you can make them strong and
+                                secure.
                             </p>
 
                             <!-- CTA Buttons - Left-aligned on iPad/desktop, centered on mobile -->
@@ -314,6 +319,7 @@
                             Compatible with Windows 10 and 11.
                         </p>
                         <button
+                            id="windows-btn"
                             class="btn-primary w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-lg font-medium flex items-center justify-center"
                         >
                             <i class="fas fa-download mr-3"></i>
@@ -349,10 +355,11 @@
                         </p>
 
                         <button
+                            id="linux-btn"
                             class="btn-primary w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-lg font-medium flex items-center justify-center"
                         >
                             <i class="fas fa-download mr-2"></i>
-                            .deb Package
+                            Linux Download .deb Package
                         </button>
 
                         <div
@@ -414,6 +421,28 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            document
+                .getElementById('linux-btn')
+                .addEventListener('click', function () {
+                    gtag('event', 'button_click', {
+                        event_category: 'engagement',
+                        event_label: 'linux download',
+                        value: 1,
+                    })
+                })
+
+            document
+                .getElementById('windows-btn')
+                .addEventListener('click', function () {
+                    gtag('event', 'button_click', {
+                        event_category: 'engagement',
+                        event_label: 'linux download',
+                        value: 1,
+                    })
+                })
+        </script>
 
         <script>
             // Mobile menu toggle
