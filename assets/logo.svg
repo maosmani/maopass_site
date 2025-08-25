@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="252.38164"
+   height="252.38162"
+   viewBox="0 0 66.775974 66.775971"
+   version="1.1"
+   id="svg1253"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="03-logo-version.svg"
+   inkscape:export-filename="logo.svg"
+   inkscape:export-xdpi="97.376343"
+   inkscape:export-ydpi="97.376343"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1255"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.184265"
+     inkscape:cx="110.19493"
+     inkscape:cy="146.92658"
+     inkscape:window-width="1366"
+     inkscape:window-height="699"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1250" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.47868142,-0.47868142)">
+    <rect
+       style="fill:#0000cc;stroke-width:0.321133"
+       id="rect1263"
+       width="66.77597"
+       height="66.77597"
+       x="0.47868145"
+       y="0.47868145"
+       ry="7.737381" />
+    <g
+       id="g1505">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:55.6133px;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono Bold';fill:#ff00ff;stroke-width:4.63444"
+         x="7.6678104"
+         y="43.943478"
+         id="text1457"
+         transform="scale(1.0796145,0.92625655)"><tspan
+           sodipodi:role="line"
+           id="tspan1455"
+           style="stroke-width:4.63444"
+           x="7.6678104"
+           y="43.943478">m</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:44.4866px;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono Bold';fill:#ff00ff;stroke-width:3.70722"
+         x="32.82246"
+         y="45.213627"
+         id="text1461"
+         transform="scale(0.99782608,1.0021787)"><tspan
+           sodipodi:role="line"
+           id="tspan1459"
+           style="stroke-width:3.70722"
+           x="32.82246"
+           y="45.213627">p</tspan></text>
+    </g>
+  </g>
+</svg>
