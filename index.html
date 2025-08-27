@@ -42,20 +42,6 @@
                 color: transparent;
             }
 
-            /* Primary CTA Button (Blue) */
-            .btn-primary {
-                @apply w-full sm:w-auto bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700;
-            }
-
-            /* Secondary CTA Button (Neutral with hover) */
-            .btn-secondary {
-                @apply w-full sm:w-auto bg-transparent border border-gray-600 text-gray-300 font-medium py-3 px-6 rounded-xl transition duration-300 hover:border-blue-500 hover:text-blue-400 hover:bg-gray-800;
-            }
-
-            /* Download card styling */
-            .download-card {
-                @apply transition-all duration-300;
-            }
             .download-card:hover {
                 transform: translateY(-4px);
                 box-shadow: 0 12px 25px -5px rgba(59, 130, 246, 0.25);
@@ -87,7 +73,10 @@
 
                 <!-- Desktop nav -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#download" class="btn-primary flex items-center">
+                    <a
+                        href="#download"
+                        class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700 flex items-center"
+                    >
                         <i class="fas fa-download mr-2"></i> Download
                     </a>
                 </div>
@@ -107,7 +96,7 @@
             >
                 <a
                     href="#download"
-                    class="btn-primary flex items-center justify-center"
+                    class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700 flex items-center justify-center"
                 >
                     <i class="fas fa-download mr-2"></i> Download
                 </a>
@@ -141,15 +130,18 @@
                     <div
                         class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
                     >
+                        <!-- Primary button -->
                         <a
                             href="#download"
-                            class="btn-primary flex items-center justify-center"
+                            class="w-full sm:w-auto bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700 flex items-center justify-center"
                         >
                             <i class="fas fa-download mr-3"></i> Get MaoPass Now
                         </a>
+
+                        <!-- Secondary button -->
                         <a
                             href="#"
-                            class="btn-secondary flex items-center justify-center"
+                            class="w-full sm:w-auto bg-transparent border border-gray-600 text-gray-300 font-medium py-3 px-6 rounded-xl transition duration-300 hover:border-blue-500 hover:text-blue-400 hover:bg-gray-800 flex items-center justify-center"
                         >
                             <i
                                 class="fas fa-play-circle mr-3 text-blue-500"
@@ -189,7 +181,7 @@
                 <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
                     <!-- Windows -->
                     <div
-                        class="download-card bg-[#1e293b] p-8 rounded-2xl border border-gray-700"
+                        class="download-card bg-[#1e293b] p-8 rounded-2xl border border-gray-700 transition-all duration-300"
                     >
                         <div class="flex items-center mb-6">
                             <div class="bg-blue-500/10 p-4 rounded-lg mr-4">
@@ -213,7 +205,7 @@
                             id="windows-btn"
                             href="https://github.com/maosmani/MaoPass-Releases/releases/download/v3.1.2/MaoPass-3.1.2.msi"
                             download
-                            class="btn-primary flex items-center justify-center"
+                            class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700 flex items-center justify-center"
                         >
                             <i class="fas fa-download mr-3"></i> Download for
                             Windows
@@ -228,7 +220,7 @@
 
                     <!-- Linux -->
                     <div
-                        class="download-card bg-[#1e293b] p-8 rounded-2xl border border-gray-700"
+                        class="download-card bg-[#1e293b] p-8 rounded-2xl border border-gray-700 transition-all duration-300"
                     >
                         <div class="flex items-center mb-6">
                             <div class="bg-gray-500/10 p-4 rounded-lg mr-4">
@@ -252,7 +244,7 @@
                             id="linux-btn"
                             href="https://github.com/maosmani/MaoPass-Releases/releases/download/v3.1.2/maopass_3.1.2_amd64.deb"
                             download
-                            class="btn-primary flex items-center justify-center"
+                            class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700 flex items-center justify-center"
                         >
                             <i class="fas fa-download mr-3"></i> Download .deb
                             for Linux
