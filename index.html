@@ -18,6 +18,10 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
 
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
         <style>
             html {
                 scroll-behavior: smooth;
@@ -60,7 +64,8 @@
     <body class="bg-[#0a0f1e] text-gray-200 antialiased">
         <!-- Navbar -->
         <nav
-            class="bg-[#0a0f1e]/90 backdrop-blur-md border-b border-gray-800 px-6 py-3 fixed w-full z-50"
+            class="bg-[#0a0f1e]/90 backdrop-blur-md border-b border-gray-800 px-6 py-6 fixed w-full z-50"
+            id="navbar"
         >
             <div class="max-w-6xl mx-auto flex justify-between items-center">
                 <!-- Logo -->
@@ -75,7 +80,7 @@
                 <div class="hidden md:flex items-center space-x-6">
                     <a
                         href="#download"
-                        class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700 flex items-center"
+                        class="bg-blue-600 text-white font-semibold py-2 px-3 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700 flex items-center"
                     >
                         <i class="fas fa-download mr-2"></i> Download
                     </a>
@@ -111,7 +116,10 @@
                 class="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12"
             >
                 <!-- Left text -->
-                <div class="lg:w-1/2 text-center lg:text-left space-y-6">
+                <div
+                    class="lg:w-1/2 text-center lg:text-left space-y-6"
+                    id="hero-text"
+                >
                     <h1
                         class="text-4xl md:text-5xl font-extrabold leading-tight text-white"
                     >
@@ -152,7 +160,7 @@
                 </div>
 
                 <!-- Right image -->
-                <div class="lg:w-1/2 w-full max-w-md mx-auto">
+                <div class="lg:w-1/2 w-full max-w-md mx-auto" id="hero-image">
                     <div
                         class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-gray-800"
                     >
@@ -178,7 +186,10 @@
                     Download MaoPass Now
                 </h2>
 
-                <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div
+                    class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto"
+                    id="download-cards"
+                >
                     <!-- Windows -->
                     <div
                         class="download-card bg-[#1e293b] p-8 rounded-2xl border border-gray-700 transition-all duration-300"
@@ -307,6 +318,37 @@
                     currentYear > baseYear
                         ? `© ${baseYear}–${currentYear} MaoPass. All rights reserved.`
                         : `© ${baseYear} MaoPass. All rights reserved.`
+            })
+
+            // GSAP animations
+            gsap.registerPlugin(ScrollTrigger)
+
+            // Navbar fade in
+            gsap.from('#navbar', {
+                y: -50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+            })
+
+            // Hero text
+            gsap.from('#hero-text > *', {
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                stagger: 0.2,
+                delay: 0.3,
+            })
+
+            // Hero image
+            gsap.from('#hero-image', {
+                y: 60,
+                scale: 0.9,
+                opacity: 0,
+                duration: 1.2,
+                ease: 'power3.out',
+                delay: 0.8,
             })
         </script>
     </body>
