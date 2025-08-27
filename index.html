@@ -5,323 +5,215 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>MaoPass</title>
         <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Fonts -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
             rel="stylesheet"
         />
+
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+
         <style>
             html {
                 scroll-behavior: smooth;
                 scroll-padding-top: 80px;
             }
 
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: 'Space Grotesk', sans-serif;
+            }
+
             .gradient-text {
-                background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+                background: linear-gradient(90deg, #3b82f6, #00f5a0);
                 -webkit-background-clip: text;
                 background-clip: text;
                 color: transparent;
             }
 
+            /* Primary CTA Button (Blue) */
+            .btn-primary {
+                @apply w-full sm:w-auto bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_15px_#3b82f6] hover:bg-blue-700;
+            }
+
+            /* Secondary CTA Button (Neutral with hover) */
+            .btn-secondary {
+                @apply w-full sm:w-auto bg-transparent border border-gray-600 text-gray-300 font-medium py-3 px-6 rounded-xl transition duration-300 hover:border-blue-500 hover:text-blue-400 hover:bg-gray-800;
+            }
+
+            /* Download card styling */
+            .download-card {
+                @apply transition-all duration-300;
+            }
+            .download-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 25px -5px rgba(59, 130, 246, 0.25);
+            }
+
             .hero-pattern {
-                background-image: radial-gradient(
+                background: radial-gradient(
                     circle at 25% 50%,
-                    rgba(37, 99, 235, 0.08) 0%,
+                    rgba(59, 130, 246, 0.05) 0%,
                     transparent 50%
                 );
             }
-
-            .btn-primary {
-                transition: all 0.2s ease;
-                box-shadow:
-                    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            }
-
-            .btn-primary:hover {
-                transform: translateY(-1px);
-                box-shadow:
-                    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            }
-
-            .btn-secondary {
-                transition: all 0.2s ease;
-                box-shadow:
-                    0 1px 3px 0 rgba(0, 0, 0, 0.1),
-                    0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            }
-
-            .btn-secondary:hover {
-                transform: translateY(-1px);
-                box-shadow:
-                    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            }
-
-            .download-card {
-                transition: all 0.2s ease;
-            }
-
-            .download-card:hover {
-                transform: translateY(-3px);
-                box-shadow:
-                    0 10px 25px -5px rgba(0, 0, 0, 0.1),
-                    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-
-            /* iPad-specific adjustments */
-            @media (min-width: 768px) and (max-width: 1024px) {
-                .hero-content {
-                    padding-left: 2rem;
-                    padding-right: 2rem;
-                }
-                .hero-heading {
-                    font-size: 2.5rem;
-                    line-height: 2.75rem;
-                }
-                .hero-buttons {
-                    flex-direction: row;
-                    justify-content: flex-start;
-                }
-                .download-section {
-                    padding-left: 2rem;
-                    padding-right: 2rem;
-                }
-                .download-card {
-                    padding: 1.5rem;
-                }
-            }
-
-            /* Simple fade-in animation for hero */
-            .hero-content-inner {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 0.8s ease-out forwards;
-                animation-delay: 0.3s;
-            }
-
-            .hero-image {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 0.8s ease-out forwards;
-                animation-delay: 0.6s;
-            }
-
-            @keyframes fadeInUp {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
         </style>
-
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-CMGCVTXP16"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || []
-            function gtag() {
-                dataLayer.push(arguments)
-            }
-            gtag('js', new Date())
-
-            gtag('config', 'G-CMGCVTXP16')
-        </script>
     </head>
-    <body class="font-sans bg-gray-50 text-gray-900 antialiased">
+
+    <body class="bg-[#0a0f1e] text-gray-200 antialiased">
         <!-- Navbar -->
         <nav
-            class="bg-white shadow-sm px-4 py-3 fixed w-full z-50 border-b border-gray-100"
+            class="bg-[#0a0f1e]/90 backdrop-blur-md border-b border-gray-800 px-6 py-3 fixed w-full z-50"
         >
             <div class="max-w-6xl mx-auto flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="p-1.5 rounded-lg">
-                        <img
-                            src="assets/logo.svg"
-                            alt="logo"
-                            class="h-[30px]"
-                        />
-                    </div>
-                    <span class="text-xl font-bold text-gray-900"
-                        >Mao<span class="text-blue-600">Pass</span></span
+                    <img src="assets/logo.svg" alt="logo" class="h-[32px]" />
+                    <span class="text-xl font-bold text-white"
+                        >Mao<span class="text-blue-500">Pass</span></span
                     >
                 </div>
 
-                <!-- Navigation links -->
+                <!-- Desktop nav -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <!--
-                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">Home</a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">About</a>
-               -->
-                    <a
-                        href="#download"
-                        class="btn-primary bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg font-medium flex items-center"
-                    >
+                    <a href="#download" class="btn-primary flex items-center">
                         <i class="fas fa-download mr-2"></i> Download
                     </a>
                 </div>
 
-                <!-- Mobile menu button -->
+                <!-- Mobile menu -->
                 <button
                     id="mobile-menu-button"
-                    class="md:hidden text-gray-600 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                    class="md:hidden text-gray-300 p-2 rounded-lg hover:bg-gray-800"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"
-                        />
-                    </svg>
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
-            <!-- Mobile menu -->
             <div
                 id="mobile-menu"
-                class="md:hidden hidden bg-white px-4 py-3 absolute top-full left-0 right-0 shadow-lg border-t border-gray-100"
+                class="md:hidden hidden bg-[#0a0f1e] px-4 py-3 absolute top-full left-0 right-0 border-t border-gray-800"
             >
-                <!--
-                <a
-                    href="#"
-                    class="block text-gray-700 py-2 hover:bg-gray-50 px-3 rounded-lg transition-colors font-medium"
-                    >Home</a
-                >
-                <a
-                    href="#"
-                    class="block text-gray-700 py-2 hover:bg-gray-50 px-3 rounded-lg transition-colors font-medium"
-                    >About</a
-                >
-                -->
                 <a
                     href="#download"
-                    class="btn-primary block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg font-medium mt-2 flex items-center justify-center"
+                    class="btn-primary flex items-center justify-center"
                 >
                     <i class="fas fa-download mr-2"></i> Download
                 </a>
             </div>
         </nav>
 
-        <!-- Hero Section with iPad Optimizations -->
+        <!-- Hero Section -->
         <section
-            class="min-h-screen flex items-center justify-center px-5 py-24 hero-pattern"
+            class="min-h-screen flex items-center justify-center px-6 py-28 hero-pattern"
         >
-            <div class="max-w-6xl mx-auto w-full">
-                <div
-                    class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
-                >
-                    <!-- Text content - Left-aligned on iPad/desktop, centered on mobile -->
-                    <div class="lg:w-1/2 hero-content">
-                        <div
-                            class="hero-content-inner text-center lg:text-left"
-                        >
-                            <h1
-                                class="text-3xl sm:text-4xl md:hero-heading lg:text-5xl font-bold text-gray-900 leading-tight mb-4"
-                            >
-                                Are Your Passwords Truly
-                                <span class="gradient-text">Secure</span>?
-                            </h1>
-                            <p
-                                class="text-lg text-gray-600 mb-8 lg:max-w-lg mx-auto lg:mx-0"
-                            >
-                                Discover MaoPass: Easily Check your Passwords
-                                Strength, And see if they are common passwords
-                                or not, So that you can make them strong and
-                                secure.
-                            </p>
-
-                            <!-- CTA Buttons - Left-aligned on iPad/desktop, centered on mobile -->
-                            <div
-                                class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-buttons"
-                            >
-                                <a
-                                    href="#download"
-                                    class="btn-primary bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center lg:justify-start"
-                                >
-                                    <i class="fas fa-download mr-3"></i>
-                                    <span>Get MaoPass Now</span>
-                                </a>
-                                <a
-                                    href="#"
-                                    class="btn-secondary bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 px-6 py-3 rounded-lg font-medium flex items-center justify-center lg:justify-start"
-                                >
-                                    <i
-                                        class="fas fa-play-circle mr-3 text-blue-600"
-                                    ></i>
-                                    <span>See How It Works</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Image -->
-                    <div
-                        class="lg:w-1/2 w-full max-w-md mx-auto mt-10 lg:mt-0 hero-image"
+            <div
+                class="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12"
+            >
+                <!-- Left text -->
+                <div class="lg:w-1/2 text-center lg:text-left space-y-6">
+                    <h1
+                        class="text-4xl md:text-5xl font-extrabold leading-tight text-white"
                     >
-                        <div
-                            class="relative rounded-xl overflow-hidden shadow-2xl border-8 border-white"
+                        Are Your Passwords Truly
+                        <span class="gradient-text">Secure</span>?
+                    </h1>
+                    <p
+                        class="text-lg md:text-xl text-gray-400 max-w-lg mx-auto lg:mx-0"
+                    >
+                        Discover
+                        <span class="text-blue-500 font-semibold">MaoPass</span
+                        >: Easily check your password’s strength and see if it’s
+                        common or compromised — so you can keep your accounts
+                        safe.
+                    </p>
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
+                    >
+                        <a
+                            href="#download"
+                            class="btn-primary flex items-center justify-center"
                         >
-                            <img
-                                src="assets/hero.png"
-                                alt="maopass"
-                                class="rounded-lg w-full h-auto object-cover"
-                            />
-                        </div>
+                            <i class="fas fa-download mr-3"></i> Get MaoPass Now
+                        </a>
+                        <a
+                            href="#"
+                            class="btn-secondary flex items-center justify-center"
+                        >
+                            <i
+                                class="fas fa-play-circle mr-3 text-blue-500"
+                            ></i>
+                            See How It Works
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="lg:w-1/2 w-full max-w-md mx-auto">
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-gray-800"
+                    >
+                        <img
+                            src="assets/hero.png"
+                            alt="MaoPass"
+                            class="rounded-xl w-full object-cover"
+                        />
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Download Section with iPad Optimizations -->
+        <!-- Download Section -->
         <section
             id="download"
-            class="min-h-screen bg-gray-100 px-4 py-12 md:py-16 flex items-center download-section"
+            class="bg-[#0f1624] px-6 py-20 flex items-center download-section"
         >
             <div class="max-w-6xl mx-auto w-full">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-center mb-14 text-white"
+                >
                     Download MaoPass Now
                 </h2>
 
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Windows Download -->
+                <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <!-- Windows -->
                     <div
-                        class="download-card bg-white p-8 rounded-xl shadow-md border border-gray-100"
+                        class="download-card bg-[#1e293b] p-8 rounded-2xl border border-gray-700"
                     >
                         <div class="flex items-center mb-6">
-                            <div class="bg-blue-100 p-4 rounded-lg mr-4">
+                            <div class="bg-blue-500/10 p-4 rounded-lg mr-4">
                                 <i
-                                    class="fab fa-windows text-blue-600 text-2xl"
+                                    class="fab fa-windows text-blue-500 text-2xl"
                                 ></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Windows</h3>
-                                <p class="text-gray-500 text-sm">
+                                <h3 class="text-xl font-semibold text-white">
+                                    Windows
+                                </h3>
+                                <p class="text-gray-400 text-sm">
                                     64-bit version
                                 </p>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">
+                        <p class="text-gray-400 mb-6">
                             Compatible with Windows 10 and 11.
                         </p>
                         <a
+                            id="windows-btn"
                             href="https://github.com/maosmani/MaoPass-Releases/releases/download/v3.1.2/MaoPass-3.1.2.msi"
                             download
-                            class="btn-primary w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-lg font-medium flex items-center justify-center"
+                            class="btn-primary flex items-center justify-center"
                         >
                             <i class="fas fa-download mr-3"></i> Download for
                             Windows
@@ -330,45 +222,46 @@
                             class="flex items-center mt-4 text-sm text-gray-500"
                         >
                             <i class="fas fa-shield-alt mr-2 text-gray-400"></i>
-                            <span>Version 3.1.2 • 102 MB </span>
+                            <span>Version 3.1.2 • 102 MB</span>
                         </div>
                     </div>
 
-                    <!-- Linux Download -->
+                    <!-- Linux -->
                     <div
-                        class="download-card bg-white p-8 rounded-xl shadow-md border border-gray-100"
+                        class="download-card bg-[#1e293b] p-8 rounded-2xl border border-gray-700"
                     >
                         <div class="flex items-center mb-6">
-                            <div class="bg-orange-100 p-4 rounded-lg mr-4">
+                            <div class="bg-gray-500/10 p-4 rounded-lg mr-4">
                                 <i
-                                    class="fab fa-linux text-orange-600 text-2xl"
+                                    class="fab fa-linux text-gray-300 text-2xl"
                                 ></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Linux</h3>
-                                <p class="text-gray-500 text-sm">
+                                <h3 class="text-xl font-semibold text-white">
+                                    Linux
+                                </h3>
+                                <p class="text-gray-400 text-sm">
                                     64-bit version
                                 </p>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">
+                        <p class="text-gray-400 mb-6">
                             Available as .deb package
                         </p>
-
                         <a
+                            id="linux-btn"
                             href="https://github.com/maosmani/MaoPass-Releases/releases/download/v3.1.2/maopass_3.1.2_amd64.deb"
                             download
-                            class="btn-primary w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-lg font-medium flex items-center justify-center"
+                            class="btn-primary flex items-center justify-center"
                         >
-                            <i class="fas fa-download mr-2"></i> Download .deb
+                            <i class="fas fa-download mr-3"></i> Download .deb
                             for Linux
                         </a>
-
                         <div
                             class="flex items-center mt-4 text-sm text-gray-500"
                         >
                             <i class="fas fa-shield-alt mr-2 text-gray-400"></i>
-                            <span>Version 3.1.2 • 88.6 MB </span>
+                            <span>Version 3.1.2 • 88.6 MB</span>
                         </div>
                     </div>
                 </div>
@@ -376,100 +269,52 @@
         </section>
 
         <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-8 px-4">
+        <footer
+            class="bg-[#0a0f1e] text-gray-400 py-10 px-6 border-t border-gray-800"
+        >
             <div class="max-w-6xl mx-auto">
                 <div
-                    class="flex flex-col md:flex-row justify-between items-center"
+                    class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6"
                 >
-                    <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="flex items-center justify-center space-x-2">
                         <img
                             src="assets/logo.svg"
                             alt="logo"
-                            class="h-[30px]"
+                            class="h-[28px]"
                         />
-                        <span class="text-lg font-bold">MaoPass</span>
+                        <span class="text-lg font-semibold text-white"
+                            >MaoPass</span
+                        >
                     </div>
-
-                    <div class="flex space-x-6">
-                        <!--
-                        <a
-                            href="#"
-                            class="text-gray-400 hover:text-white transition-colors"
-                        >
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a
-                            href="#"
-                            class="text-gray-400 hover:text-white transition-colors"
-                        >
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a
-                            href="#"
-                            class="text-gray-400 hover:text-white transition-colors"
-                        >
-                            <i class="fab fa-discord"></i>
-                        </a>
-                        -->
+                    <div class="text-sm text-gray-500">
+                        <p id="copyrightYear">
+                            © 2023 MaoPass. All rights reserved.
+                        </p>
                     </div>
-                </div>
-
-                <div
-                    class="border-t border-gray-700 mt-6 pt-6 text-center md:text-left"
-                >
-                    <p class="text-gray-400" id="copyrightYear">
-                        © 2023 MaoPass. All rights reserved.
-                    </p>
                 </div>
             </div>
         </footer>
-
-        <script>
-            document
-                .getElementById('linux-btn')
-                .addEventListener('click', function () {
-                    gtag('event', 'button_click', {
-                        event_category: 'engagement',
-                        event_label: 'linux download',
-                        value: 1,
-                    })
-                })
-
-            document
-                .getElementById('windows-btn')
-                .addEventListener('click', function () {
-                    gtag('event', 'button_click', {
-                        event_category: 'engagement',
-                        event_label: 'linux download',
-                        value: 1,
-                    })
-                })
-        </script>
 
         <script>
             // Mobile menu toggle
             document
                 .getElementById('mobile-menu-button')
                 .addEventListener('click', function () {
-                    const menu = document.getElementById('mobile-menu')
-                    menu.classList.toggle('hidden')
+                    document
+                        .getElementById('mobile-menu')
+                        .classList.toggle('hidden')
                 })
 
             // Update copyright year
             document.addEventListener('DOMContentLoaded', function () {
                 const baseYear = 2023
                 const currentYear = new Date().getFullYear()
-                const copyrightElement =
-                    document.getElementById('copyrightYear')
+                const copyright = document.getElementById('copyrightYear')
 
-                let yearText
-                if (currentYear > baseYear) {
-                    yearText = `© ${baseYear}–${currentYear}`
-                } else {
-                    yearText = `© ${baseYear}`
-                }
-
-                copyrightElement.textContent = `${yearText} MaoPass. All rights reserved.`
+                copyright.textContent =
+                    currentYear > baseYear
+                        ? `© ${baseYear}–${currentYear} MaoPass. All rights reserved.`
+                        : `© ${baseYear} MaoPass. All rights reserved.`
             })
         </script>
     </body>
